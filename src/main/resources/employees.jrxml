@@ -9,12 +9,10 @@
     </field>
     <field name="name" class="java.lang.String">
     </field>
-    <field name="designation" class="java.lang.String">
-    </field>
+
     <field name="salary" class="java.lang.Double">
     </field>
-    <field name="doj" class="java.lang.String">
-    </field>
+
     <background>
         <band/>
     </background>
@@ -72,7 +70,7 @@
                 <textElement textAlignment="Center">
                     <font size="14" isBold="true"/>
                 </textElement>
-                <text><![CDATA[Designation]]></text>
+                <text><![CDATA[salary]]></text>
             </staticText>
             <staticText>
                 <reportElement mode="Opaque" x="333" y="0" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="6b031597-3515-433c-a227-eababeb43ef7">
@@ -81,7 +79,7 @@
                 <textElement textAlignment="Center">
                     <font size="14" isBold="true"/>
                 </textElement>
-                <text><![CDATA[Salary]]></text>
+                <text><![CDATA[dateEntre]]></text>
             </staticText>
             <staticText>
                 <reportElement mode="Opaque" x="444" y="0" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="841e417b-1be9-42e1-9caf-345f3d518034">
@@ -90,7 +88,7 @@
                 <textElement textAlignment="Center">
                     <font size="14" isBold="true"/>
                 </textElement>
-                <text><![CDATA[D.O.J]]></text>
+                <text><![CDATA[dateSortie]]></text>
             </staticText>
         </band>
     </columnHeader>
@@ -117,15 +115,7 @@
                 </textElement>
                 <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
             </textField>
-            <textField textAdjust="StretchHeight">
-                <reportElement x="222" y="0" width="111" height="20" uuid="ff31f827-4102-40b8-9bf0-240ed21cecb2">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9955e4a2-6b41-4b01-ba4b-674b47fc4594"/>
-                </reportElement>
-                <textElement>
-                    <font size="14"/>
-                </textElement>
-                <textFieldExpression><![CDATA[$F{designation}]]></textFieldExpression>
-            </textField>
+
             <textField textAdjust="StretchHeight">
                 <reportElement x="333" y="0" width="111" height="20" uuid="5ac53d2d-a56b-4064-9c33-dcb53cc2b8a8">
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f0539aa-9309-4bac-ac6d-c63cdc61a6d6"/>
@@ -135,15 +125,7 @@
                 </textElement>
                 <textFieldExpression><![CDATA[$F{salary}]]></textFieldExpression>
             </textField>
-            <textField textAdjust="StretchHeight">
-                <reportElement x="444" y="0" width="111" height="20" uuid="536f5d4d-8208-42c2-a152-1771b7413bae">
-                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7e0dbf30-1af0-4cc3-a8b9-e68c19c0243c"/>
-                </reportElement>
-                <textElement>
-                    <font size="14"/>
-                </textElement>
-                <textFieldExpression><![CDATA[$F{doj}]]></textFieldExpression>
-            </textField>
+
         </band>
     </detail>
     <columnFooter>

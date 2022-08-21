@@ -1,7 +1,9 @@
-package com.jasperReport.service;
+package com.jasperReport.module.employee.service;
 
-import com.jasperReport.entity.Employee;
-import com.jasperReport.repository.EmployeeRepository;
+
+import com.jasperReport.module.conge.repository.CongeRepository;
+import com.jasperReport.module.employee.entity.Employee;
+import com.jasperReport.module.employee.repository.EmployeeRepository;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,9 @@ public class ReportService {
 
     @Autowired
     private EmployeeRepository repository;
+
+    @Autowired
+    private CongeRepository congeRepository;
 
 
     public String exportReport(String reportFormat) throws FileNotFoundException, JRException {

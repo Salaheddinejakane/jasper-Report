@@ -1,8 +1,8 @@
 package com.jasperReport;
 
-import com.jasperReport.entity.Employee;
-import com.jasperReport.repository.EmployeeRepository;
-import com.jasperReport.service.ReportService;
+import com.jasperReport.module.employee.entity.Employee;
+import com.jasperReport.module.employee.repository.EmployeeRepository;
+import com.jasperReport.module.employee.service.ReportService;
 import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import java.io.FileNotFoundException;
 import java.util.List;
 
-import static org.springframework.http.MediaType.APPLICATION_XML_VALUE;
 
 @SpringBootApplication
 @RestController
