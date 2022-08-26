@@ -12,7 +12,5 @@ import java.util.Date;
 public class CongeRequest {
 
 
-
-    private Date dateEntre;
-    private Date dateSortie;
+    private String congename;
 }

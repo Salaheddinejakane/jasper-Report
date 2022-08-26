@@ -1,36 +1,35 @@
 package com.jasperReport.module.conge.entity;
 
 
+
 import com.jasperReport.module.employee.entity.Employee;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@Data
+
+
 @Entity
 //@Table(name = "Conge_TBL")
 public class Conge {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private Date dateEntre;
-    private Date dateSortie;
+    private String congename;
 
-    @ManyToOne
-    @JoinColumn(name="employee",nullable = false,referencedColumnName = "id")
-    private Employee employee;
+    @OneToMany
+    private List<Employee> employees;
 
-   /*
-     @ManyToOne
-     @JoinColumn(referencedColumnName = "id")
-     private Employee employee;
-    */
+    public String getCongename() {
+        return congename;
+    }
 
+    public void setCongename(String congename) {
+        this.congename = congename;
+    }
 }

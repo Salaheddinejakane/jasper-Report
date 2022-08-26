@@ -12,6 +12,5 @@ import java.util.Date;
 public class CongeResponseWrapper {
 
     private int id;
-    private Date dateEntre;
-    private Date dateSortie;
+    private String congename;
 }
