@@ -12,7 +12,7 @@
     <field name="conges" class="com.jasperReport.module.conge.entity.Conge">
     </field>
 
-    <variable name="skillname" class="java.util.List"/>
+    <field name="skills" class="java.util.List"/>
 
 
 <background>
@@ -39,20 +39,28 @@
                 <textFieldExpression><![CDATA[$F{conges}.getCongename()]]></textFieldExpression>
             </textField>
 
-            <subreport>
-                <reportElement x="277" y="0" width="277" height="20" uuid="39dd46ac-67c3-4852-af0c-3d46b2d9bf82"/>
-                <dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource(skills)]]></dataSourceExpression>
-                <subreportExpression><![CDATA["/path/to/subreport.jasper"]]></subreportExpression>
-            </subreport>
-<!--            <textField textAdjust="StretchHeight">-->
-<!--                <reportElement x="277" y="0" width="277" height="20" uuid="39dd46ac-67c3-4852-af0c-3d46b2d9bf82">-->
-<!--                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d33cd714-7d32-4315-a3c7-4fd6b26b452c"/>-->
-<!--                </reportElement>-->
-<!--                <textElement>-->
-<!--                    <font size="14"/>-->
-<!--                </textElement>-->
-<!--                <textFieldExpression><![CDATA[$F{skills}]]></textFieldExpression>-->
-<!--            </textField>-->
+<!--            <subreport>-->
+<!--                <reportElement x="-2" y="148" width="555" height="51" uuid="f081f980-ea14-4434-9282-beebf515cb6c"/>-->
+<!--                <subreportParameter name="SUBREPORT_DIR"/>-->
+<!--                <dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource-->
+<!--                    ($F{skills})]]></dataSourceExpression>-->
+<!--                <subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "jasper-subreport-skills.jasper"]]></subreportExpression>-->
+<!--            </subreport>-->
+
+<!--            <subreport>-->
+<!--                <reportElement x="277" y="0" width="277" height="20" uuid="39dd46ac-67c3-4852-af0c-3d46b2d9bf82"/>-->
+<!--                <dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource(skills)]]></dataSourceExpression>-->
+<!--                <subreportExpression><![CDATA["/path/to/subreport.jasper"]]></subreportExpression>-->
+<!--            </subreport>-->
+            <textField textAdjust="StretchHeight">
+                <reportElement x="277" y="0" width="277" height="20" uuid="39dd46ac-67c3-4852-af0c-3d46b2d9bf82">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d33cd714-7d32-4315-a3c7-4fd6b26b452c"/>
+                </reportElement>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{skills}]]></textFieldExpression>
+            </textField>
 
 <!--            <subreport>-->
 <!--                <reportElement x="-2" y="148" width="555" height="51" uuid="f081f980-ea14-4434-9282-beebf515cb6c"/>-->
