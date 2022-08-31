@@ -9,3 +9,4 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring", uses = {EmployeeResponseWrapperMapper.class})
 public interface CongeResponseMapper extends BaseMapper<Conge, CongeResponse> {
 }
+

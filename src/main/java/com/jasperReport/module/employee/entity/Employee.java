@@ -18,22 +18,29 @@ import java.util.List;
 @ToString
 @Data
 @Entity
-
+@Table(name = "Employee")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "employee_id")
     private int id;
+//    @Column(name = "employee_name")
     private String name;
-
 
     @ManyToOne
     private Conge conges;
+
+//    @ManyToOne
+//    private Conge conges;
     /*
 
         CREATE ONE TO MANY RELATION TO X ENTITY
      */
-    @OneToMany(mappedBy="employee")
-    private List<Skill> skills;
+//    @OneToMany(mappedBy="employee")
+//    private List<Skill> skills;
+
+    @ManyToOne
+    private Skill skills;
 
 
 

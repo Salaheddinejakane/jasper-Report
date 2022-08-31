@@ -14,16 +14,19 @@ import java.util.List;
 @Setter
 
 @Entity
-//@Table(name = "Conge_TBL")
+//@Table(name = "Skill")
 public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "skill_id")
     private int id;
+//    @Column(name = "skill_name")
     private String skillname;
     @JsonIgnore
 
-    @ManyToOne
-    private Employee employee;
+    @OneToMany
+    private List<Employee> employees;
+
 
 
 }
