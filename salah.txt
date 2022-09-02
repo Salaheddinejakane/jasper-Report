@@ -1,0 +1,16 @@
+# =============================== # JPA / HIBERNATE # ===============================#
+# =============================== # DATABASE # ===============================#
+#
+#spring.datasource.url=jdbc:postgresql://localhost:5432/person
+#spring.datasource.username=user_demo
+#spring.datasource.password=123
+#spring.datasource.driver-class-name=org.postgresql.Driver
+#
+## =============================== # JPA / HIBERNATE # ===============================#
+#
+#spring.jpa.show-sql=true
+#spring.jpa.hibernate.ddl-auto=create
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+#
+#spring.jpa.properties.hibernate.globally_quoted_identifiers=true
+
