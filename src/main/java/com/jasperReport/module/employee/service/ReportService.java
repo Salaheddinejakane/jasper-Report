@@ -24,18 +24,14 @@ public class ReportService {
     @Autowired
     private EmployeeRepository repository;
 
-    @Autowired
-    private EntrepriseRepository congeRepository;
 
-    @Autowired
-    private VacanceRepository skillRepository;
 
 
     public String exportReport(String reportFormat) throws FileNotFoundException, JRException {
         String path = "C:\\Users\\J.SaLahEddine\\Desktop\\Report";
         List<Employee> employees = repository.findAll();
         //load file and compile it
-        File file = ResourceUtils.getFile("classpath:Empl00.jrxml");
+        File file = ResourceUtils.getFile("classpath:Empl1.jrxml");
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(employees);
         Map<String, Object> parameters = new HashMap<>();
