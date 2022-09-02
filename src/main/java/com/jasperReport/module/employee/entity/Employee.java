@@ -1,15 +1,13 @@
 package com.jasperReport.module.employee.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.jasperReport.module.conge.entity.Conge;
-import com.jasperReport.module.skill.entity.Skill;
+import com.jasperReport.module.entreprise.entity.Entreprise;
+import com.jasperReport.module.vacance.entity.Vacance;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.List;
 
 
@@ -18,7 +16,6 @@ import java.util.List;
 @ToString
 @Data
 @Entity
-
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,16 +24,11 @@ public class Employee {
 
 
     @ManyToOne
-    private Conge conges;
+    private Entreprise entreprise;
     /*
 
         CREATE ONE TO MANY RELATION TO X ENTITY
      */
     @OneToMany(mappedBy="employee")
-    private List<Skill> skills;
-
-
-
-
-
+    private List<Vacance> vacanceList;
 }

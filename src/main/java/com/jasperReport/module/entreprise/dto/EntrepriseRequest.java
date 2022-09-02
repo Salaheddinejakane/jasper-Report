@@ -1,16 +1,14 @@
-package com.jasperReport.module.conge.dto;
+package com.jasperReport.module.entreprise.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class CongeRequest {
+public class EntrepriseRequest {
 
 
-    private String congename;
+    private String namedeentreprise;
 }

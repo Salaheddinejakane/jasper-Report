@@ -56,13 +56,15 @@
     </style>
     <subDataset name="employee" uuid="833ab41a-8e0a-4d81-acc3-647874757c0d">
         <property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
-        <!--        <queryString language="SQL">-->
-        <!--            <![CDATA[select * from orders]]>-->
-        <!--        </queryString>-->
+<!--        <queryString language="SQL">-->
+<!--            <![CDATA[select * from orders]]>-->
+<!--        </queryString>-->
         <field name="id" class="java.lang.Integer"/>
 
         <field name="name" class="java.lang.String"/>
+        <field name="entreprise" class="com.jasperReport.module.entreprise.entity.Entreprise"/>
 
+        <field name="vacanceList" class="java.util.List"/>
     </subDataset>
     <queryString>
         <![CDATA[]]>
@@ -71,7 +73,7 @@
         <band height="102" splitType="Stretch">
             <image>
                 <reportElement x="725" y="0" width="77" height="102" uuid="1639351a-2867-41e6-8aff-a8cdb9ba0e01"/>
-                <!--                <imageExpression><![CDATA[]]></imageExpression>-->
+<!--                <imageExpression><![CDATA[]]></imageExpression>-->
             </image>
             <frame>
                 <reportElement mode="Opaque" x="0" y="0" width="721" height="66" backcolor="#000000" uuid="75968b5b-d9b9-408c-944c-158c077dc5cf"/>
@@ -140,8 +142,7 @@
                     <property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
                     <property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
                 </reportElement>
-                <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd
-http://jasperreports.sourceforge.net/jasperreports/components " xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
                     <datasetRun subDataset="employee" uuid="00874e83-6b6e-48e9-b16d-a5ccaae56ded">
                         <connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
                     </datasetRun>
@@ -150,8 +151,7 @@ http://jasperreports.sourceforge.net/jasperreports/components " xmlns:xsi="http:
                         <jr:tableFooter style="Table_TH" height="30"/>
                         <jr:columnHeader style="Table_CH" height="30">
                             <staticText>
-                                <reportElement key="" style="Column header" x="0" y="0" width="90" height="30"
-                                               forecolor="#FFFFFF" uuid="2e900f6e-e3bd-47c2-bdd5-92d629cc9607"/>
+                                <reportElement key="" style="Column header" x="0" y="0" width="90" height="30" forecolor="#FFFFFF" uuid="2e900f6e-e3bd-47c2-bdd5-92d629cc9607"/>
                                 <box leftPadding="2"/>
                                 <textElement>
                                     <font fontName="DejaVu Sans" size="12" isBold="true"/>
@@ -162,8 +162,7 @@ http://jasperreports.sourceforge.net/jasperreports/components " xmlns:xsi="http:
                         <jr:columnFooter style="Table_CH" height="30"/>
                         <jr:detailCell style="Table_TD" height="30">
                             <textField>
-                                <reportElement style="Detail" x="0" y="0" width="90" height="30"
-                                               uuid="61da4e47-569c-4f93-816e-74d1bb4351ab"/>
+                                <reportElement style="Detail" x="0" y="0" width="90" height="30" uuid="61da4e47-569c-4f93-816e-74d1bb4351ab"/>
                                 <box leftPadding="2"/>
                                 <textElement>
                                     <font fontName="DejaVu Sans" size="12"/>
@@ -177,8 +176,7 @@ http://jasperreports.sourceforge.net/jasperreports/components " xmlns:xsi="http:
                         <jr:tableFooter style="Table_TH" height="30"/>
                         <jr:columnHeader style="Table_CH" height="30">
                             <staticText>
-                                <reportElement key="" style="Column header" x="0" y="0" width="90" height="30"
-                                               forecolor="#FFFFFF" uuid="ee5aa4aa-3db0-4037-91e5-619dd06fc9c0"/>
+                                <reportElement key="" style="Column header" x="0" y="0" width="90" height="30" forecolor="#FFFFFF" uuid="ee5aa4aa-3db0-4037-91e5-619dd06fc9c0"/>
                                 <box leftPadding="2"/>
                                 <textElement>
                                     <font fontName="DejaVu Sans" size="12" isBold="true"/>
@@ -189,8 +187,7 @@ http://jasperreports.sourceforge.net/jasperreports/components " xmlns:xsi="http:
                         <jr:columnFooter style="Table_CH" height="30"/>
                         <jr:detailCell style="Table_TD" height="30">
                             <textField>
-                                <reportElement style="Detail" x="0" y="0" width="90" height="30"
-                                               uuid="0a60acec-efb3-4d87-8d23-c0fd9e687444"/>
+                                <reportElement style="Detail" x="0" y="0" width="90" height="30" uuid="0a60acec-efb3-4d87-8d23-c0fd9e687444"/>
                                 <box leftPadding="2"/>
                                 <textElement>
                                     <font fontName="DejaVu Sans" size="12"/>
@@ -199,8 +196,56 @@ http://jasperreports.sourceforge.net/jasperreports/components " xmlns:xsi="http:
                             </textField>
                         </jr:detailCell>
                     </jr:column>
-
-
+                    <jr:column width="90" uuid="2e63e618-3a94-42c0-8910-19556235af75">
+                        <jr:tableHeader style="Table_TH" height="30"/>
+                        <jr:tableFooter style="Table_TH" height="30"/>
+                        <jr:columnHeader style="Table_CH" height="30">
+                            <staticText>
+                                <reportElement key="" style="Column header" x="0" y="0" width="90" height="30" forecolor="#FFFFFF" uuid="1735017e-f41e-4311-808a-75c9c443bc11"/>
+                                <box leftPadding="2"/>
+                                <textElement>
+                                    <font fontName="DejaVu Sans" size="12" isBold="true"/>
+                                </textElement>
+                                <text><![CDATA[ENTREPRISE]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:columnFooter style="Table_CH" height="30"/>
+                        <jr:detailCell style="Table_TD" height="30">
+                            <textField>
+                                <reportElement style="Detail" x="0" y="0" width="90" height="30" uuid="0975d757-2a81-4690-9269-16ff97a16b6a"/>
+                                <box leftPadding="2"/>
+                                <textElement>
+                                    <font fontName="DejaVu Sans" size="12"/>
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{entreprise}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                    <jr:column width="90" uuid="2e501846-7786-4c28-bfa3-abff966c6493">
+                        <jr:tableHeader style="Table_TH" height="30"/>
+                        <jr:tableFooter style="Table_TH" height="30"/>
+                        <jr:columnHeader style="Table_CH" height="30">
+                            <staticText>
+                                <reportElement key="" style="Column header" x="0" y="0" width="90" height="30" forecolor="#FFFFFF" uuid="b1c5c247-417b-4f2c-8134-e79865ae8dc3"/>
+                                <box leftPadding="2"/>
+                                <textElement>
+                                    <font fontName="DejaVu Sans" size="12" isBold="true"/>
+                                </textElement>
+                                <text><![CDATA[VACANCE]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:columnFooter style="Table_CH" height="30"/>
+                        <jr:detailCell style="Table_TD" height="30">
+                            <textField>
+                                <reportElement style="Detail" x="0" y="0" width="90" height="30" uuid="e757a892-c187-49af-8584-f25faca9cf8f"/>
+                                <box leftPadding="2"/>
+                                <textElement>
+                                    <font fontName="DejaVu Sans" size="12"/>
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{vacanceList}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
                 </jr:table>
             </componentElement>
         </band>
