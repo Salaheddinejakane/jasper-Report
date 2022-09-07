@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="VF" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="40a7cdbb-88e4-4153-a605-06efab88ae6a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="id" class="java.lang.Long"/>
+	<field name="num" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="priorité" class="java.lang.String"/>
+	<field name="totalPriceHT" class="java.lang.Double"/>
+	<field name="totalPriceTTC" class="java.lang.Double"/>
+	<field name="items" class="java.util.Set"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<textField>
+				<reportElement x="140" y="80" width="100" height="30" uuid="94c859e3-b7bc-4176-8b6d-f552700dad89"/>
+				<textFieldExpression><![CDATA[$F{num}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="80" width="100" height="30" uuid="e48a0578-c2ce-45a3-b2ef-7e4eca628dda"/>
+				<text><![CDATA[Nombre de produit]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="120" width="100" height="30" uuid="a5058511-38b1-490a-aa39-e29cb6202f74"/>
+				<textFieldExpression><![CDATA[$F{priorité}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="110" width="100" height="30" uuid="04105f49-f999-4017-b788-22826746cf56"/>
+				<text><![CDATA[priorité]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="456" y="107" width="100" height="30" uuid="c00be76e-8f6b-409a-874b-cef2c0adbfe2"/>
+				<textFieldExpression><![CDATA[$F{totalPriceHT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="356" y="107" width="100" height="30" uuid="92e63978-c11c-4031-95a0-e9b3a9f3dfd3"/>
+				<text><![CDATA[totalPriceHT]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="460" y="140" width="100" height="30" uuid="e1bfcd05-c911-4fa8-a29e-f0226f157421"/>
+				<textFieldExpression><![CDATA[$F{totalPriceTTC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="350" y="137" width="100" height="30" uuid="7c79eadd-e6bd-4324-9958-f95079ca845c"/>
+				<text><![CDATA[totalPriceTTC]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="10" y="180" width="520" height="200" uuid="40f5009b-e982-451c-980c-7382256b9176"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{items})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["VF1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

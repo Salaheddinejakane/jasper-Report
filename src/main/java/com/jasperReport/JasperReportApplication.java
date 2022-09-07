@@ -1,8 +1,8 @@
 package com.jasperReport;
 
-import com.jasperReport.module.employee.entity.Employee;
-import com.jasperReport.module.employee.repository.EmployeeRepository;
-import com.jasperReport.module.employee.service.ReportService;
+import com.jasperReport.module.order.entity.OrderEntity;
+import com.jasperReport.module.order.repository.OrderEntityRepository;
+import com.jasperReport.module.order.service.ReportService;
 import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -22,13 +22,13 @@ public class JasperReportApplication {
 
 
 	@Autowired
-	private EmployeeRepository repository;
+	private OrderEntityRepository repository;
 	@Autowired
 	private ReportService service;
 //	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-@RequestMapping(value = "/getEmployees", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/getOrder", produces = MediaType.APPLICATION_JSON_VALUE)
 	//@GetMapping("/getEmployees",produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Employee>> getEmployees() {
+	public ResponseEntity<List<OrderEntity>> getOrders() {
 
 		return new ResponseEntity<>(repository.findAll(), HttpStatus.ACCEPTED);
 	}
