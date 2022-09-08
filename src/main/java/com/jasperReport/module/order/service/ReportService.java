@@ -12,6 +12,7 @@ import org.springframework.util.ResourceUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,11 +28,10 @@ public class ReportService {
 
     public String exportReport(String reportFormat) throws FileNotFoundException, JRException {
         String path = "C:\\Users\\J.SaLahEddine\\Desktop\\Report";
-        List<OrderEntity> employees = repository.findAll();
         //load file and compile it
-        File file = ResourceUtils.getFile("classpath:SA.jrxml");
+        File file = ResourceUtils.getFile("classpath:RE.jrxml");
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
-        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(employees);
+        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(Collections.singleton( repository.findById(1L).get()));
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("createdBy", "Java Techie");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
