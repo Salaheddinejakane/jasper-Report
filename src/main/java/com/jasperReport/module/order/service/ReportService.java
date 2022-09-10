@@ -33,13 +33,13 @@ public class ReportService {
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(Collections.singleton( repository.findById(1L).get()));
         Map<String, Object> parameters = new HashMap<>();
-        parameters.put("createdBy", "Java Techie");
+        parameters.put("createdBy", "Abdelkrim Nourti");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
         if (reportFormat.equalsIgnoreCase("html")) {
-            JasperExportManager.exportReportToHtmlFile(jasperPrint, path + "\\employees.html");
+            JasperExportManager.exportReportToHtmlFile(jasperPrint, path + "\\Orders.html");
         }
         if (reportFormat.equalsIgnoreCase("pdf")) {
-            JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\employees.pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\Orders.pdf");
         }
 
         return "report generated in path : " + path;
