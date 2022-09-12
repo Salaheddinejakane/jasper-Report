@@ -33,7 +33,7 @@ public class ReportService {
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(Collections.singleton( repository.findById(1L).get()));
         Map<String, Object> parameters = new HashMap<>();
-        parameters.put("createdBy", "Abdelkrim Nourti");
+        parameters.put("createdBy", "Binarios-it");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
         if (reportFormat.equalsIgnoreCase("html")) {
             JasperExportManager.exportReportToHtmlFile(jasperPrint, path + "\\Orders.html");
