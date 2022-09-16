@@ -43,19 +43,23 @@ public class OrderItem {
     /* unit price excluding tax of order item
      */
     private Double unitPriceHT;
+    private Double unitPTHT;
 
     /* unit price including tax of order item
      */
     private Double unitPriceTTC;
 
+    /* Add tva
+     */
+    private Double TVA;
     /* Enum indicates order item priority
      */
 //    private OrderPriority priority;
 
     /* ordered quantity
      */
-//    private Integer orderedQuantity;
-//
+   private Integer orderedQuantity;
+
 //    /* remaining quantity
 //     */
 //    private Integer alreadyReceived;

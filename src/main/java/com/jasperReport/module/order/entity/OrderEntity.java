@@ -34,10 +34,15 @@ public class OrderEntity {
      */
     private String priorité;
 
+    private String validepar;
+
     /* List of products/items in order
      */
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private Set<OrderItem> items;
+    /* Add tva
+     */
+    private Double TVA;
 
     /* total price excluding tax of order
      */
