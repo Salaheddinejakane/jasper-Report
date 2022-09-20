@@ -51,7 +51,7 @@ public class OrderItem {
 
     /* Add tva
      */
-    private Double TVA;
+    private Integer TVA;
     /* Enum indicates order item priority
      */
 //    private OrderPriority priority;

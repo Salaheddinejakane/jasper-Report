@@ -17,6 +17,7 @@ import java.util.Set;
 public class OrderEntity {
       /* identifier of order
      */
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -42,7 +43,7 @@ public class OrderEntity {
     private Set<OrderItem> items;
     /* Add tva
      */
-    private Double TVA;
+    private Integer TVA;
 
     /* total price excluding tax of order
      */
