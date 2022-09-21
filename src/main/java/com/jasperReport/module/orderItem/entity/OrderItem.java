@@ -2,6 +2,7 @@ package com.jasperReport.module.orderItem.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.jasperReport.module.product.entity.Product;
 import com.jasperReport.module.order.entity.OrderEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,12 +31,14 @@ public class OrderItem {
      */
 //    @ManyToOne
 //    private Product productEntity;
+//    productEntity.getName();
 
-    private String product;
+    //private String product;
 
     /* Order of order item
 
      */
+    private String productEntity;
     @JsonIgnore
     @ManyToOne
     private OrderEntity order;
@@ -43,15 +46,19 @@ public class OrderItem {
     /* unit price excluding tax of order item
      */
     private Double unitPriceHT;
-    private Double unitPTHT;
+
+
 
     /* unit price including tax of order item
      */
     private Double unitPriceTTC;
 
-    /* Add tva
-     */
+    // Add + tva
+    private Double unitPTHT;
     private Integer TVA;
+
+
+
     /* Enum indicates order item priority
      */
 //    private OrderPriority priority;

@@ -1,6 +1,7 @@
 package com.jasperReport.module.order.entity;
 
 import com.jasperReport.module.orderItem.entity.OrderItem;
+import com.jasperReport.module.orderPriority.entity.OrderPriority;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,7 +34,16 @@ public class OrderEntity {
 
     /* remark of order
      */
-    private String priorité;
+//   private String priority;
+    /**
+     * Enum indicates order priority
+     */
+    @ManyToOne
+    private OrderPriority priority;
+
+    /*
+    Add validepar
+     */
 
     private String validepar;
 
@@ -41,6 +51,8 @@ public class OrderEntity {
      */
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private Set<OrderItem> items;
+
+
     /* Add tva
      */
     private Integer TVA;
