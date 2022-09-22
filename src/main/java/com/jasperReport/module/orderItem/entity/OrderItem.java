@@ -38,7 +38,8 @@ public class OrderItem {
     /* Order of order item
 
      */
-    private String productEntity;
+    @ManyToOne
+    private Product productEntity;
     @JsonIgnore
     @ManyToOne
     private OrderEntity order;

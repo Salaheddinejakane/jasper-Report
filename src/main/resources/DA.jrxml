@@ -55,7 +55,7 @@
 			<rightPen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
-	<style name="Style1" forecolor="#43484B" backcolor="#F7F7F7" fill="Solid" hTextAlign="Center" vTextAlign="Middle" isBlankWhenNull="false" fontName="Roboto" fontSize="10" isBold="false">
+	<style name="Style1" forecolor="#43484B" backcolor="#F7F7F7" fill="Solid" hTextAlign="Center" vTextAlign="Middle" isBlankWhenNull="false" fontName="Times New Roman" fontSize="10" isBold="false">
 		<pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
 		<box>
 			<pen lineWidth="1.0" lineStyle="Solid"/>
@@ -65,7 +65,7 @@
 			<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#43484B"/>
 		</box>
 	</style>
-	<style name="Style2" mode="Opaque" forecolor="#43484B" fill="Solid" hTextAlign="Center" vTextAlign="Middle" fontName="Roboto" fontSize="9">
+	<style name="Style2" mode="Opaque" forecolor="#43484B" fill="Solid" hTextAlign="Center" vTextAlign="Middle" fontName="Times New Roman" fontSize="9">
 		<pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
 		<box>
 			<pen lineWidth="0.75" lineStyle="Solid" lineColor="#EEEFEF"/>
@@ -79,11 +79,9 @@
 		<![CDATA[]]>
 	</queryString>
 	<field name="orderedQuantity" class="java.lang.Integer"/>
-	<field name="productEntity" class="java.lang.String"/>
+	<field name="productEntity" class="com.jasperReport.module.product.entity.Product"/>
 	<field name="unitPriceTTC" class="java.lang.Double"/>
 	<field name="unitPriceHT" class="java.lang.Double"/>
-	<field name="unitPTHT" class="java.lang.Double"/>
-	<field name="TVA" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -119,22 +117,7 @@
 				<text><![CDATA[Quantité]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="" style="Style1" mode="Opaque" x="400" y="0" width="60" height="22" backcolor="#F7F7F7" uuid="4af41752-f308-469f-8906-0b6b0c2d6b74">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11de349f-5006-430a-a9e2-12ba0307f739"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
-				</box>
-				<text><![CDATA[P.T HT (dh)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement key="" style="Style1" mode="Opaque" x="460" y="0" width="74" height="22" backcolor="#F7F7F7" uuid="f6813e70-d009-44ec-a8d0-68c431c06eb2">
+				<reportElement key="" style="Style1" mode="Opaque" x="330" y="0" width="74" height="22" backcolor="#F7F7F7" uuid="f6813e70-d009-44ec-a8d0-68c431c06eb2">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eb0d7f4f-777a-4797-a77d-a25ebf63a7f2"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -163,15 +146,6 @@
 				</box>
 				<text><![CDATA[P.U HT (dh)]]></text>
 			</staticText>
-			<staticText>
-				<reportElement style="Style1" mode="Opaque" x="330" y="0" width="70" height="22" backcolor="#F7F7F7" uuid="5da2449e-5897-4e56-9f10-612b31420663">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="664c02b8-9b55-4e4d-87b1-4a9928980257"/>
-				</reportElement>
-				<box>
-					<pen lineStyle="Solid" lineColor="#EEEFEF"/>
-				</box>
-				<text><![CDATA[TVA]]></text>
-			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
@@ -182,7 +156,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left"/>
-				<textFieldExpression><![CDATA[$F{productEntity}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{productEntity}.getName()]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,000">
 				<reportElement style="Style2" x="190" y="0" width="70" height="15" uuid="3cc8f7a6-54ed-40a3-b295-b0aa3c1b1c44">
@@ -193,15 +167,7 @@
 				<textFieldExpression><![CDATA[$F{orderedQuantity}]]></textFieldExpression>
 			</textField>
 			<textField pattern="# ###.00">
-				<reportElement style="Style2" x="400" y="0" width="60" height="15" uuid="62a85e19-9eea-49f5-a600-05cb65112453">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11de349f-5006-430a-a9e2-12ba0307f739"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[$F{unitPriceHT}]]></textFieldExpression>
-			</textField>
-			<textField pattern="# ###.00">
-				<reportElement style="Style2" x="460" y="0" width="74" height="15" uuid="13c943fb-dd0e-4150-b79a-aa6dfc636d63">
+				<reportElement style="Style2" x="330" y="0" width="74" height="15" uuid="13c943fb-dd0e-4150-b79a-aa6dfc636d63">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eb0d7f4f-777a-4797-a77d-a25ebf63a7f2"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -216,12 +182,6 @@
 				</reportElement>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{unitPriceHT}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement style="Style2" x="330" y="0" width="70" height="15" uuid="d828aa4f-7742-4155-a202-cd6fa8c475cb">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="664c02b8-9b55-4e4d-87b1-4a9928980257"/>
-				</reportElement>
-				<textFieldExpression><![CDATA[$F{TVA}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
