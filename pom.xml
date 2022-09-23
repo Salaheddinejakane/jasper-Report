@@ -41,11 +41,13 @@
 			<version>1.13</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports-fonts -->
+		<!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports-fonts -->
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports-fonts</artifactId>
 			<version>6.18.1</version>
 		</dependency>
+
 
 
 		<!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->

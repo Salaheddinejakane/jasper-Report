@@ -29,8 +29,8 @@ public class OrderItem {
 
     /* product of order
      */
-//    @ManyToOne
-//    private Product productEntity;
+    @ManyToOne
+    private Product productEntity;
 //    productEntity.getName();
 
     //private String product;
@@ -38,7 +38,7 @@ public class OrderItem {
     /* Order of order item
 
      */
-    private String productEntity;
+//    private String productEntity;
     @JsonIgnore
     @ManyToOne
     private OrderEntity order;
