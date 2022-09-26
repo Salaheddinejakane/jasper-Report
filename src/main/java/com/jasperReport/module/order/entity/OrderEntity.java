@@ -41,6 +41,13 @@ public class OrderEntity {
     @ManyToOne
     private OrderPriority priority;
 
+
+    /**
+     * remark of order
+     */
+    private String remark;
+
+
     /*
     Add validepar
      */

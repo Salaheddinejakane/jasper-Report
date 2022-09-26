@@ -31,21 +31,20 @@
     <style name="Style4" fill="Solid" hTextAlign="Left" vTextAlign="Middle" fontName="Roboto" fontSize="7" isBold="true">
         <pen lineStyle="Solid"/>
     </style>
-    <style name="Style5" vImageAlign="Middle" fontName="Times New Roman" fontSize="8"/>
+    <style name="Style5" vImageAlign="Middle" fontName="Roboto" fontSize="8"/>
     <style name="Style6" forecolor="#43484B" vTextAlign="Middle" fontName="Roboto" fontSize="7"/>
     <style name="Style7" forecolor="#000000" hTextAlign="Left" fontName="Roboto" fontSize="10"/>
     <style name="Style8" forecolor="#000000" hTextAlign="Right" fontName="Roboto" fontSize="10"/>
+    <style name="Styleremark" hTextAlign="Left" vTextAlign="Middle" rotation="None" fontName="Roboto" fontSize="10" isBold="true"/>
     <queryString>
         <![CDATA[]]>
     </queryString>
     <field name="id" class="java.lang.Long"/>
-    <field name="num" class="java.lang.String"/>
     <field name="priority" class="com.jasperReport.module.orderPriority.entity.OrderPriority"/>
     <field name="totalPriceHT" class="java.lang.Double"/>
     <field name="totalPriceTTC" class="java.lang.Double"/>
     <field name="items" class="java.util.Set"/>
-<!--    <field name="validepar" class="java.lang.String"/>-->
-<!--    <field name="TVA" class="java.lang.Integer"/>-->
+    <field name="remark" class="java.lang.String"/>
     <pageHeader>
         <band height="46">
             <staticText>
@@ -90,7 +89,7 @@
                 <text><![CDATA[RC050922-001]]></text>
             </staticText>
             <staticText>
-                <reportElement x="505" y="26" width="34" height="12" forecolor="#43484B" uuid="0cffe5fb-ac84-47e4-bc5f-a76f1e61c533">
+                <reportElement x="501" y="27" width="34" height="12" forecolor="#43484B" uuid="0cffe5fb-ac84-47e4-bc5f-a76f1e61c533">
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 </reportElement>
@@ -100,11 +99,11 @@
                 <text><![CDATA[Page]]></text>
             </staticText>
             <textField>
-                <reportElement x="540" y="26" width="16" height="16" forecolor="#43484B" uuid="bcf535cd-9f92-4e22-a5a7-f4bb81e66326">
+                <reportElement mode="Opaque" x="535" y="27" width="17" height="16" forecolor="#43484B" uuid="bcf535cd-9f92-4e22-a5a7-f4bb81e66326">
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 </reportElement>
-                <textElement textAlignment="Left" verticalAlignment="Top"/>
+                <textElement textAlignment="Right" verticalAlignment="Top"/>
                 <textFieldExpression><![CDATA[$V{PAGE_NUMBER}+"/"+$V{PAGE_NUMBER}]]></textFieldExpression>
             </textField>
             <line>
@@ -119,11 +118,11 @@
         </band>
     </pageHeader>
     <detail>
-        <band height="143" splitType="Stretch">
+        <band height="141" splitType="Stretch">
             <subreport>
                 <reportElement x="0" y="115" width="555" height="24" uuid="57dc0068-bc06-4034-a6f2-6a9ed41eae31"/>
                 <dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{items})]]></dataSourceExpression>
-                <subreportExpression class="net.sf.jasperreports.engine.JasperReport"><![CDATA[net.sf.jasperreports.engine.JasperCompileManager.compileReport(getClass().getResource("DA.jrxml").openStream())]]></subreportExpression>
+                <subreportExpression><![CDATA[net.sf.jasperreports.engine.JasperCompileManager.compileReport(getClass().getResource("DA.jrxml").openStream())]]></subreportExpression>
             </subreport>
             <rectangle radius="4">
                 <reportElement x="-1" y="9" width="307" height="100" backcolor="#F7F7F7" uuid="df964885-aece-4cee-baa8-00ac89b93f95">
@@ -172,6 +171,9 @@ Province Nouaceur, Casablanca]]></text>
             </staticText>
             <staticText>
                 <reportElement x="136" y="15" width="100" height="13" forecolor="#43484B" uuid="f159f339-0ce9-4cc2-a431-f5909189af74"/>
+                <textElement>
+                    <font fontName="Roboto" isBold="false"/>
+                </textElement>
                 <text><![CDATA[BINARIOS CHU]]></text>
             </staticText>
             <rectangle radius="4">
@@ -208,14 +210,14 @@ Hong Kong, China]]></text>
             <staticText>
                 <reportElement x="340" y="85" width="122" height="17" forecolor="#43484B" uuid="60b94a2f-c66a-42d8-891f-9d0ef27cdb97"/>
                 <textElement verticalAlignment="Middle">
-                    <font size="9"/>
+                    <font fontName="Roboto" size="9"/>
                 </textElement>
                 <text><![CDATA[contact@versalife.com]]></text>
             </staticText>
             <staticText>
                 <reportElement x="110" y="85" width="162" height="17" forecolor="#43484B" uuid="e51e7fc0-4a22-4c9f-b2ff-d4931a9b0ac1"/>
                 <textElement verticalAlignment="Middle">
-                    <font size="9"/>
+                    <font fontName="Roboto" size="9"/>
                 </textElement>
                 <text><![CDATA[contact@versalife.com]]></text>
             </staticText>
@@ -273,12 +275,11 @@ Hong Kong, China]]></text>
                 <imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (4).svg"]]></imageExpression>
             </image>
         </band>
-        <band height="45">
+        <band height="46">
             <textField>
                 <reportElement key="" style="Style7" x="151" y="31" width="190" height="14" uuid="3a0b1753-8ddd-4a25-a32d-82a9c1bbc58c">
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                 </reportElement>
-<!--                <textFieldExpression><![CDATA[$F{validepar}]]></textFieldExpression>-->
             </textField>
             <staticText>
                 <reportElement style="Style1" x="-1" y="31" width="152" height="14" uuid="95509499-fe91-4b8e-ae84-f5b08ad61189">
@@ -286,14 +287,6 @@ Hong Kong, China]]></text>
                 </reportElement>
                 <text><![CDATA[Validé par :]]></text>
             </staticText>
-            <textField>
-                <reportElement key="" style="Style7" x="151" y="3" width="190" height="14" uuid="6cceea20-5d26-441d-86eb-94695e164f66">
-                    <property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
-                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
-                </reportElement>
-                <textFieldExpression><![CDATA[$F{num}]]></textFieldExpression>
-            </textField>
             <staticText>
                 <reportElement style="Style1" x="-1" y="3" width="152" height="14" uuid="bea90f7b-f6d3-47ba-a280-4494a2407b13">
                     <property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -360,7 +353,6 @@ Hong Kong, China]]></text>
                     <pen lineWidth="0.75" lineStyle="Solid" lineColor="#D9D8D7"/>
                 </box>
                 <textElement textAlignment="Right" verticalAlignment="Middle"/>
-<!--                <textFieldExpression><![CDATA[$F{TVA}+"%"]]></textFieldExpression>-->
             </textField>
             <staticText>
                 <reportElement x="379" y="17" width="70" height="13" uuid="028c4430-d644-4711-8cad-1e032d527668">
@@ -386,6 +378,13 @@ Hong Kong, China]]></text>
                 </textElement>
                 <text><![CDATA[Total TTC]]></text>
             </staticText>
+            <textField>
+                <reportElement style="Style7" x="151" y="5" width="190" height="14" uuid="7e98857e-804e-4ed4-84ce-aef9038eac45">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+            </textField>
         </band>
     </detail>
     <columnFooter>
@@ -685,7 +684,7 @@ Province Nouaceur, Casablanca]]></text>
                 <textElement verticalAlignment="Middle">
                     <font fontName="Roboto" size="10" isBold="true"/>
                 </textElement>
-                <text><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas mauris, tempus, pellentesque dapibus in non ligula. Ac nunc condimentum pretium quis. ]]></text>
+                <text><![CDATA[]]></text>
             </staticText>
             <staticText>
                 <reportElement x="24" y="10" width="126" height="20" uuid="9e63069d-59c7-4b98-9b75-6bb2953fdb7f">
@@ -697,6 +696,10 @@ Province Nouaceur, Casablanca]]></text>
                 </textElement>
                 <text><![CDATA[Commentaire :]]></text>
             </staticText>
+            <textField>
+                <reportElement style="Styleremark" x="25" y="32" width="100" height="18" uuid="dbeeb91f-94dc-461c-bc58-e9abd345e65c"/>
+                <textFieldExpression><![CDATA[$F{remark}]]></textFieldExpression>
+            </textField>
         </band>
     </summary>
 </jasperReport>
