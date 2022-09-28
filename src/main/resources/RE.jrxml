@@ -36,11 +36,12 @@
     <style name="Style7" forecolor="#000000" hTextAlign="Left" fontName="Roboto" fontSize="10"/>
     <style name="Style8" forecolor="#000000" hTextAlign="Right" fontName="Roboto" fontSize="10"/>
     <style name="Styleremark" hTextAlign="Left" vTextAlign="Middle" rotation="None" fontName="Roboto" fontSize="10" isBold="true"/>
+    <style name="Style9" forecolor="#43484B" hTextAlign="Center" fontName="Roboto" fontSize="10"/>
     <queryString>
         <![CDATA[]]>
     </queryString>
     <field name="id" class="java.lang.Long"/>
-    <field name="priority" class="com.jasperReport.module.orderPriority.entity.OrderPriority"/>
+    <field name="priority" class="com.binarios.api.pharmacy.enums.OrderPriority"/>
     <field name="totalPriceHT" class="java.lang.Double"/>
     <field name="totalPriceTTC" class="java.lang.Double"/>
     <field name="items" class="java.util.Set"/>
@@ -171,7 +172,7 @@ Province Nouaceur, Casablanca]]></text>
             </staticText>
             <staticText>
                 <reportElement x="136" y="15" width="100" height="13" forecolor="#43484B" uuid="f159f339-0ce9-4cc2-a431-f5909189af74"/>
-                <textElement>
+                <textElement verticalAlignment="Middle">
                     <font fontName="Roboto" isBold="false"/>
                 </textElement>
                 <text><![CDATA[BINARIOS CHU]]></text>
@@ -230,49 +231,49 @@ Hong Kong, China]]></text>
             </staticText>
             <image>
                 <reportElement x="13" y="47" width="50" height="17" uuid="f56eaee2-48a5-40c9-bda9-c1cd55eddaf0"/>
-                <imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (1).svg"]]></imageExpression>
+                <imageExpression><![CDATA["classpath:/images/Vector (1).svg"]]></imageExpression>
             </image>
             <image hAlign="Center" vAlign="Middle">
                 <reportElement x="94" y="47" width="7" height="10" backcolor="#6A7B89" uuid="d435daae-2415-4d03-a75d-f5c0d5b13bbc">
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                 </reportElement>
-                <imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (2).svg"]]></imageExpression>
+                <imageExpression><![CDATA["classpath:/images/Vector (2).svg"]]></imageExpression>
             </image>
             <image hAlign="Center" vAlign="Middle">
                 <reportElement x="326" y="47" width="7" height="10" forecolor="#6A7B89" backcolor="#6A7B89" uuid="06c84b7b-5380-4a43-8798-211f12938833">
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                 </reportElement>
-                <imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (2).svg"]]></imageExpression>
+                <imageExpression><![CDATA["classpath:/images/Vector (2).svg"]]></imageExpression>
             </image>
             <image hAlign="Center" vAlign="Middle">
                 <reportElement x="92" y="69" width="10" height="10" backcolor="#6A7B89" uuid="002a34f2-7d56-4d8d-ba20-0067f1326e64">
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 </reportElement>
-                <imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (3).svg"]]></imageExpression>
+                <imageExpression><![CDATA["classpath:/images/Vector (3).svg"]]></imageExpression>
             </image>
             <image hAlign="Center" vAlign="Middle">
                 <reportElement x="325" y="69" width="10" height="10" backcolor="#6A7B89" uuid="c3587971-0416-4f57-8cd9-798458779f57">
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 </reportElement>
-                <imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (3).svg"]]></imageExpression>
+                <imageExpression><![CDATA["classpath:/images/Vector (3).svg"]]></imageExpression>
             </image>
             <image hAlign="Center" vAlign="Middle">
                 <reportElement x="92" y="90" width="10" height="9" backcolor="#6A7B89" uuid="7e767fc4-4fd2-4a58-8de4-d0fdb11c407c">
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 </reportElement>
-                <imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (4).svg"]]></imageExpression>
+                <imageExpression><![CDATA["classpath:/images/Vector (4).svg"]]></imageExpression>
             </image>
             <image hAlign="Center" vAlign="Middle">
                 <reportElement x="325" y="89" width="10" height="9" backcolor="#6A7B89" uuid="76299724-73af-497f-b5ec-64da3add0f12">
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 </reportElement>
-                <imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (4).svg"]]></imageExpression>
+                <imageExpression><![CDATA["classpath:/images/Vector (4).svg"]]></imageExpression>
             </image>
         </band>
         <band height="46">
@@ -303,7 +304,7 @@ Hong Kong, China]]></text>
                 <reportElement key="" style="Style7" x="151" y="17" width="190" height="14" uuid="6b5c4689-2fbe-4c56-9705-66ab881dfdf4">
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                 </reportElement>
-                <textFieldExpression><![CDATA[$F{priority}.getName()]]></textFieldExpression>
+                <textFieldExpression><![CDATA[$F{priority}]]></textFieldExpression>
             </textField>
             <staticText>
                 <reportElement style="Style1" x="-1" y="17" width="152" height="14" uuid="7480b843-e291-47e5-a53e-831a722918ee">
@@ -322,7 +323,7 @@ Hong Kong, China]]></text>
                 <textFieldExpression><![CDATA[$F{totalPriceHT}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="379" y="4" width="70" height="13" uuid="d51afa79-0945-4c63-bc86-13e01ab451e7">
+                <reportElement style="Style9" x="379" y="4" width="70" height="13" uuid="d51afa79-0945-4c63-bc86-13e01ab451e7">
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 </reportElement>
@@ -355,7 +356,7 @@ Hong Kong, China]]></text>
                 <textElement textAlignment="Right" verticalAlignment="Middle"/>
             </textField>
             <staticText>
-                <reportElement x="379" y="17" width="70" height="13" uuid="028c4430-d644-4711-8cad-1e032d527668">
+                <reportElement style="Style9" x="379" y="17" width="70" height="13" uuid="028c4430-d644-4711-8cad-1e032d527668">
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                 </reportElement>
                 <box>
@@ -367,7 +368,7 @@ Hong Kong, China]]></text>
                 <text><![CDATA[TVA]]></text>
             </staticText>
             <staticText>
-                <reportElement x="379" y="30" width="70" height="13" uuid="823c3cfa-62b5-487f-8b25-056a85577b1c">
+                <reportElement style="Style9" x="379" y="30" width="70" height="13" uuid="823c3cfa-62b5-487f-8b25-056a85577b1c">
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                 </reportElement>
                 <box>
@@ -383,12 +384,12 @@ Hong Kong, China]]></text>
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 </reportElement>
-                <textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+                <textFieldExpression><![CDATA["14"]]></textFieldExpression>
             </textField>
         </band>
     </detail>
     <columnFooter>
-        <band height="52">
+        <band height="48">
             <staticText>
                 <reportElement x="279" y="10" width="80" height="20" uuid="12a0777c-cfc6-424a-8238-6209ededf6da"/>
                 <box>
@@ -498,7 +499,7 @@ Province Nouaceur, Casablanca]]></text>
                 <reportElement x="5" y="17" width="70" height="18" uuid="cbd564cf-5777-4cb1-8fa6-ea7b6bb4a4cb">
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 </reportElement>
-                <imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (1).svg"]]></imageExpression>
+                <imageExpression><![CDATA["classpath:/images/Vector (1).svg"]]></imageExpression>
             </image>
             <staticText>
                 <reportElement style="Style4" x="251" y="40" width="23" height="10" uuid="7d412982-679b-419a-a6ee-3f264f0313f8">
@@ -529,7 +530,7 @@ Province Nouaceur, Casablanca]]></text>
                     <property name="com.jaspersoft.studio.unit.y" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 </reportElement>
-                <imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (5).svg"]]></imageExpression>
+                <imageExpression><![CDATA["classpath:/images/Vector (5).svg"]]></imageExpression>
             </image>
             <image>
                 <reportElement x="519" y="34" width="11" height="8" uuid="77245990-08e6-43e9-bc00-7ad2cd35ece0">
@@ -537,7 +538,7 @@ Province Nouaceur, Casablanca]]></text>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                     <property name="com.jaspersoft.studio.unit.x" value="px"/>
                 </reportElement>
-                <imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (6).svg"]]></imageExpression>
+                <imageExpression><![CDATA["classpath:/images/Vector (6).svg"]]></imageExpression>
             </image>
         </band>
     </pageFooter>
@@ -626,7 +627,7 @@ Province Nouaceur, Casablanca]]></text>
                     <property name="com.jaspersoft.studio.unit.y" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                 </reportElement>
-                <imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (5).svg"]]></imageExpression>
+                <imageExpression><![CDATA["classpath:/images/Vector (5).svg"]]></imageExpression>
             </image>
             <image>
                 <reportElement x="519" y="25" width="11" height="8" uuid="7f29dbac-2fa8-47d6-a659-839195af8598">
@@ -634,14 +635,14 @@ Province Nouaceur, Casablanca]]></text>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                     <property name="com.jaspersoft.studio.unit.x" value="px"/>
                 </reportElement>
-                <imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (6).svg"]]></imageExpression>
+                <imageExpression><![CDATA["classpath:/images/Vector (6).svg"]]></imageExpression>
             </image>
             <image>
                 <reportElement x="7" y="21" width="70" height="18" uuid="01a5d101-f6c4-4739-9284-d52be5c07025">
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                 </reportElement>
-                <imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (1).svg"]]></imageExpression>
+                <imageExpression><![CDATA["classpath:/images/Vector (1).svg"]]></imageExpression>
             </image>
             <staticText>
                 <reportElement style="Style4" x="251" y="40" width="23" height="10" uuid="6cb8cc31-cb48-4f2c-815d-39feb9735034">
@@ -680,7 +681,7 @@ Province Nouaceur, Casablanca]]></text>
                 </graphicElement>
             </rectangle>
             <staticText>
-                <reportElement x="23" y="30" width="496" height="32" forecolor="#43484B" uuid="08feaf50-4e3f-42fa-8c61-0d7e0bdc4a58"/>
+                <reportElement x="23" y="30" width="528" height="32" forecolor="#43484B" uuid="08feaf50-4e3f-42fa-8c61-0d7e0bdc4a58"/>
                 <textElement verticalAlignment="Middle">
                     <font fontName="Roboto" size="10" isBold="true"/>
                 </textElement>
@@ -697,7 +698,7 @@ Province Nouaceur, Casablanca]]></text>
                 <text><![CDATA[Commentaire :]]></text>
             </staticText>
             <textField>
-                <reportElement style="Styleremark" x="25" y="32" width="100" height="18" uuid="dbeeb91f-94dc-461c-bc58-e9abd345e65c"/>
+                <reportElement style="Styleremark" x="25" y="32" width="526" height="30" uuid="dbeeb91f-94dc-461c-bc58-e9abd345e65c"/>
                 <textFieldExpression><![CDATA[$F{remark}]]></textFieldExpression>
             </textField>
         </band>
