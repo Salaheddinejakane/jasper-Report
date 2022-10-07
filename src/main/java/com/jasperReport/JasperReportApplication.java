@@ -34,7 +34,7 @@ public class JasperReportApplication {
 	}
 
 	@GetMapping("/report/{format}")
-	public String generateReport(@PathVariable String format) throws FileNotFoundException, JRException {
+	public String generateReport(@PathVariable String format) throws Exception {
 		return service.exportReport(format);
 	}
 	public static void main(String[] args) {

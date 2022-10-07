@@ -30,6 +30,7 @@ public class Receipt {
 
 
 
+
     /**
      * delivery note number of receipt
      */
