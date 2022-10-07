@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="receptionItems" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ebfbe3e1-5e86-4bb2-9d36-45a61e560ad7">
+    <style name="Style1" mode="Opaque" forecolor="#43484B" backcolor="#F7F7F7" fontName="Roboto">
+        <pen lineStyle="Solid"/>
+        <box topPadding="4" leftPadding="4" bottomPadding="6" rightPadding="6">
+            <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
+        </box>
+    </style>
+    <style name="Style2" forecolor="#43484B" vTextAlign="Middle" pattern="" fontName="Roboto" fontSize="9">
+        <pen lineStyle="Solid"/>
+    </style>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <field name="unitQuantity" class="java.lang.Double"/>
+    <field name="unitBuyPriceHT" class="java.lang.Double"/>
+    <field name="productTVA" class="java.lang.Double"/>
+    <field name="unitBuyPriceTTC" class="java.lang.Double"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <columnHeader>
+        <band height="23" splitType="Stretch">
+            <staticText>
+                <reportElement style="Style1" x="-20" y="0" width="70" height="23" uuid="860f66ac-73d7-4c99-a62b-a10a28d82fa9">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="483456d8-8bef-4e38-9850-fc589e66c50b"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <text><![CDATA[N° cmd]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Style1" x="50" y="0" width="125" height="23" uuid="c440848f-575f-44b3-bd16-cd37b3a4537c">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f5db5321-eac1-4120-837b-81fbeb56ab7f"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <text><![CDATA[Produit]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Style1" x="176" y="0" width="64" height="23" uuid="b88acc89-39b1-441b-9744-e227aa5f6310">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4950351f-71c2-4d80-bfd3-b6056a7808ae"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <text><![CDATA[Lot]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Style1" x="240" y="0" width="61" height="23" uuid="1c5de65b-c426-4f4e-9add-d13c0914bc93">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="09224406-dc44-42a6-bfc0-c138e2bbc571"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <text><![CDATA[Date pér.]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Style1" x="301" y="0" width="36" height="23" uuid="816abdb8-5cec-426f-b5a5-876b40860557">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4fd7500f-a1ff-477c-8757-64029fe96abd"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <text><![CDATA[Qté]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Style1" x="337" y="0" width="45" height="23" uuid="ae0492b5-8072-426c-afbe-9ce3af0e291d">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba47ce8a-a369-420c-a579-b75b4f2a2412"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <text><![CDATA[P.U HT (dh)]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Style1" x="382" y="0" width="37" height="23" uuid="8166b35a-6f28-44e8-b763-4c545f677dbb">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b547bced-fbd3-44d9-a15d-e1ac5b5611a3"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <text><![CDATA[TVA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Style1" x="475" y="0" width="69" height="23" uuid="f2fe4299-9954-43f7-956c-f0abef58eb4d">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d134808b-1f9c-4f97-b6bf-6d7aaa71a45f"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <text><![CDATA[P.T TTC (dh)]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Style1" x="419" y="0" width="56" height="23" uuid="9b39dfab-163c-45f5-b708-455a792ffdf8">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a25d69af-e410-420f-a793-2f43fb0e1478"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <text><![CDATA[P.T HT (dh)]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="33" splitType="Stretch">
+            <textField>
+                <reportElement style="Style2" x="-20" y="0" width="70" height="33" uuid="bfb54cb4-27e5-44c0-92b4-a3255a43b89e">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="483456d8-8bef-4e38-9850-fc589e66c50b"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
+                </box>
+            </textField>
+            <textField>
+                <reportElement style="Style2" x="50" y="0" width="125" height="33" uuid="79dcb2bd-2726-4f29-91f7-68e6eda093b2">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f5db5321-eac1-4120-837b-81fbeb56ab7f"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
+                </box>
+            </textField>
+            <textField>
+                <reportElement style="Style2" x="175" y="0" width="65" height="33" uuid="17f23ed5-7c55-40b2-8290-83ca81cd8ce2">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4950351f-71c2-4d80-bfd3-b6056a7808ae"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
+                </box>
+            </textField>
+            <textField>
+                <reportElement style="Style2" x="240" y="0" width="61" height="33" uuid="9d64c311-2195-4caa-9749-69a1e1c5f4b5">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="09224406-dc44-42a6-bfc0-c138e2bbc571"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
+                </box>
+            </textField>
+            <textField>
+                <reportElement style="Style2" x="301" y="0" width="36" height="33" uuid="12dde4c8-d759-4533-972e-638c94971677">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4fd7500f-a1ff-477c-8757-64029fe96abd"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
+                </box>
+                <textFieldExpression><![CDATA[$F{unitQuantity}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement style="Style2" x="337" y="0" width="45" height="33" uuid="2fea6e16-a21e-4980-bf0d-374170871593">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba47ce8a-a369-420c-a579-b75b4f2a2412"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
+                </box>
+                <textFieldExpression><![CDATA[$F{unitBuyPriceHT}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement style="Style2" x="382" y="0" width="37" height="33" uuid="aab1b59d-3d9e-4a14-8313-2b73bd9cc774">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b547bced-fbd3-44d9-a15d-e1ac5b5611a3"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
+                </box>
+                <textFieldExpression><![CDATA[$F{productTVA}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement style="Style2" x="475" y="0" width="69" height="33" uuid="576a6934-22db-4a7d-81bb-280094ab8a9d">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d134808b-1f9c-4f97-b6bf-6d7aaa71a45f"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
+                </box>
+                <textFieldExpression><![CDATA[$F{unitBuyPriceTTC}*$F{unitQuantity}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement style="Style2" x="419" y="0" width="56" height="33" uuid="88ef7481-4953-433a-8f6f-fbf2806b139c">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a25d69af-e410-420f-a793-2f43fb0e1478"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
+                </box>
+                <textFieldExpression><![CDATA[$F{unitBuyPriceHT}*$F{unitQuantity}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>
