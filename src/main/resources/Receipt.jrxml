@@ -39,7 +39,7 @@
 	<style name="Styleremark" hTextAlign="Left" vTextAlign="Middle" rotation="None" fontName="Roboto" fontSize="10" isBold="true"/>
 	<style name="Style9" forecolor="#43484B" hTextAlign="Center" fontName="Roboto" fontSize="10"/>
 	<style name="Style bn&amp;fc" fontName="Roboto" fontSize="10"/>
-	<parameter name="logo" class="java.lang.String">
+	<parameter name="logo1" class="java.lang.String">
 	</parameter>
 	<queryString>
 		<![CDATA[]]>
@@ -118,7 +118,7 @@
 				<reportElement x="270" y="10" width="41" height="30" uuid="7f5d48fa-cbe4-4cf3-b1c4-d6e562d65054"/>
 <!--				<imageExpression><![CDATA[new ByteArrayInputStream(new org.apache.commons.codec.binary.Base64().decodeBase64($V{logo}.getBytes("UTF-8")))]]></imageExpression>-->
 <!--				<imageExpression><![CDATA[new ByteArrayInputStream(new Base64.getEncoder().encodeToString(IOUtils.toByteArray(logo)))]]></imageExpression>-->
-				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo}))]]></imageExpression>
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo1}))]]></imageExpression>
 			</image>
 		</band>
 	</pageHeader>

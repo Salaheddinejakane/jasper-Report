@@ -33,7 +33,12 @@ public class ReportService {
     public String exportReport(String reportFormat) throws Exception {
 
         HashMap<String, Object> parameters = new HashMap<String, Object>();
-        parameters.put("logo", getBase64String());
+        parameters.put("logo1", getBase64String1());
+        parameters.put("logo2", getBase64String2());
+        parameters.put("logo3", getBase64String3());
+        parameters.put("logo4", getBase64String4());
+        parameters.put("logo5", getBase64String5());
+        parameters.put("logo6", getBase64String6());
         String path = "C:\\Users\\J.SaLahEddine\\Desktop\\Report";
         //load file and compile it
         File file = ResourceUtils.getFile("classpath:Receipt.jrxml");
@@ -54,8 +59,53 @@ public class ReportService {
 
 
 
-    public  String getBase64String() throws Exception {
+    public  String getBase64String1() throws Exception {
         InputStream file = this.resourceLoader.getResource("classpath:" + "/images/Vector (1).jpg").getInputStream();
+
+
+        String encodedString = Base64.getEncoder().encodeToString(IOUtils.toByteArray(file ));
+
+        return encodedString;
+
+    }
+    public  String getBase64String2() throws Exception {
+        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/Vector (2).jpg").getInputStream();
+
+
+        String encodedString = Base64.getEncoder().encodeToString(IOUtils.toByteArray(file ));
+
+        return encodedString;
+
+    }
+    public  String getBase64String3() throws Exception {
+        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/Vector (3).jpg").getInputStream();
+
+
+        String encodedString = Base64.getEncoder().encodeToString(IOUtils.toByteArray(file ));
+
+        return encodedString;
+
+    }
+    public  String getBase64String4() throws Exception {
+        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/Vector (4).jpg").getInputStream();
+
+
+        String encodedString = Base64.getEncoder().encodeToString(IOUtils.toByteArray(file ));
+
+        return encodedString;
+
+    }
+    public  String getBase64String5() throws Exception {
+        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/Vector (5).jpg").getInputStream();
+
+
+        String encodedString = Base64.getEncoder().encodeToString(IOUtils.toByteArray(file ));
+
+        return encodedString;
+
+    }
+    public  String getBase64String6() throws Exception {
+        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/Vector (6).jpg").getInputStream();
 
 
         String encodedString = Base64.getEncoder().encodeToString(IOUtils.toByteArray(file ));
