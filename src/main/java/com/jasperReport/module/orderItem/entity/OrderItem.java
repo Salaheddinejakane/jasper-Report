@@ -2,7 +2,6 @@ package com.jasperReport.module.orderItem.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.jasperReport.module.product.entity.Product;
 import com.jasperReport.module.order.entity.OrderEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,8 +28,8 @@ public class OrderItem {
 
     /* product of order
      */
-    @ManyToOne
-    private Product productEntity;
+
+    private String productEntity;
 //    productEntity.getName();
 
     //private String product;

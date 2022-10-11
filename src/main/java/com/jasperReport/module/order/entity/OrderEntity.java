@@ -1,7 +1,7 @@
 package com.jasperReport.module.order.entity;
 
 import com.jasperReport.module.orderItem.entity.OrderItem;
-import com.jasperReport.module.orderPriority.entity.OrderPriority;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,8 +16,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderEntity {
-      /* identifier of order
-     */
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,19 +32,22 @@ public class OrderEntity {
     private String name;
 
     /* remark of order
-     */
-//   private String priority;
+
     /**
      * Enum indicates order priority
      */
-    @ManyToOne
-    private OrderPriority priority;
+
+    private String priority;
+    private String validatedBy;
+    private String mobile;
+    private String fax;
+    private String address;
+    private String remark;
+    private String email;
 
     /*
     Add validepar
      */
-
-    private String validepar;
 
     /* List of products/items in order
      */
