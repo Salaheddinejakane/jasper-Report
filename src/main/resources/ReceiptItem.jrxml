@@ -7,16 +7,22 @@
             <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
         </box>
     </style>
-    <style name="Style2" forecolor="#43484B" vTextAlign="Middle" pattern="" fontName="Roboto" fontSize="9">
+    <style name="Style2" forecolor="#43484B" hTextAlign="Center" vTextAlign="Middle" pattern="" fontName="Roboto" fontSize="9">
         <pen lineStyle="Solid"/>
     </style>
     <queryString>
         <![CDATA[]]>
     </queryString>
-    <field name="unitQuantity" class="java.lang.Double"/>
+
     <field name="unitBuyPriceHT" class="java.lang.Double"/>
     <field name="productTVA" class="java.lang.Double"/>
     <field name="unitBuyPriceTTC" class="java.lang.Double"/>
+    <field name="ncmd" class="java.lang.String"/>
+
+    <field name="unitQuantity" class="java.lang.Double"/>
+    <field name="productEntity" class="java.lang.String"/>
+    <field name="lot" class="java.lang.String"/>
+<!--    <field name="Dateper" class="java.lang.String"/>-->
     <background>
         <band splitType="Stretch"/>
     </background>
@@ -72,7 +78,7 @@
                 <text><![CDATA[TVA]]></text>
             </staticText>
             <staticText>
-                <reportElement style="Style1" x="475" y="0" width="69" height="23" uuid="f2fe4299-9954-43f7-956c-f0abef58eb4d">
+                <reportElement style="Style1" x="475" y="0" width="59" height="23" uuid="f2fe4299-9954-43f7-956c-f0abef58eb4d">
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d134808b-1f9c-4f97-b6bf-6d7aaa71a45f"/>
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                 </reportElement>
@@ -97,6 +103,11 @@
                 <box>
                     <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
                 </box>
+<!--                <variableExpression>$F{MyField} == null ? new Integer(0) : $F{MyField}</variableExpression>-->
+<!--                <textFieldExpression><![CDATA[($F{Ncmd}!= null) ? $F{Ncmd} : "0.00"]]></textFieldExpression>-->
+
+<!--            <textFieldExpression><![CDATA[$F{Ncmd}== null ? "" : $F{Ncmd}]]></textFieldExpression>-->
+                <textFieldExpression><![CDATA[$F{ncmd}]]></textFieldExpression>
             </textField>
             <textField>
                 <reportElement style="Style2" x="50" y="0" width="125" height="33" uuid="79dcb2bd-2726-4f29-91f7-68e6eda093b2">
@@ -106,6 +117,7 @@
                 <box>
                     <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
                 </box>
+                <textFieldExpression><![CDATA[$F{productEntity}]]></textFieldExpression>
             </textField>
             <textField>
                 <reportElement style="Style2" x="175" y="0" width="65" height="33" uuid="17f23ed5-7c55-40b2-8290-83ca81cd8ce2">
@@ -115,6 +127,7 @@
                 <box>
                     <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
                 </box>
+                <textFieldExpression><![CDATA[$F{lot}]]></textFieldExpression>
             </textField>
             <textField>
                 <reportElement style="Style2" x="240" y="0" width="61" height="33" uuid="9d64c311-2195-4caa-9749-69a1e1c5f4b5">
@@ -124,6 +137,9 @@
                 <box>
                     <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
                 </box>
+                <textElement textAlignment="Center"/>
+<!--                <textFieldExpression><![CDATA[($F{Dateper}!= null) ? $F{Dateper} : "0.00"]]></textFieldExpression>-->
+<!--                <textFieldExpression><![CDATA[$F{Dateper}]]></textFieldExpression>-->
             </textField>
             <textField>
                 <reportElement style="Style2" x="301" y="0" width="36" height="33" uuid="12dde4c8-d759-4533-972e-638c94971677">
@@ -133,6 +149,8 @@
                 <box>
                     <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
                 </box>
+                <textElement textAlignment="Center"/>
+
                 <textFieldExpression><![CDATA[$F{unitQuantity}]]></textFieldExpression>
             </textField>
             <textField>
@@ -144,6 +162,7 @@
                 <box>
                     <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
                 </box>
+                <textElement textAlignment="Center"/>
                 <textFieldExpression><![CDATA[$F{unitBuyPriceHT}]]></textFieldExpression>
             </textField>
             <textField>
@@ -154,10 +173,11 @@
                 <box>
                     <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
                 </box>
+                <textElement textAlignment="Center"/>
                 <textFieldExpression><![CDATA[$F{productTVA}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement style="Style2" x="475" y="0" width="69" height="33" uuid="576a6934-22db-4a7d-81bb-280094ab8a9d">
+                <reportElement style="Style2" x="475" y="0" width="59" height="33" uuid="576a6934-22db-4a7d-81bb-280094ab8a9d">
                     <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d134808b-1f9c-4f97-b6bf-6d7aaa71a45f"/>
                     <property name="com.jaspersoft.studio.unit.width" value="px"/>
                     <property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -165,6 +185,7 @@
                 <box>
                     <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
                 </box>
+                <textElement textAlignment="Center"/>
                 <textFieldExpression><![CDATA[$F{unitBuyPriceTTC}*$F{unitQuantity}]]></textFieldExpression>
             </textField>
             <textField>
@@ -176,6 +197,7 @@
                 <box>
                     <pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEFEF"/>
                 </box>
+                <textElement textAlignment="Right"/>
                 <textFieldExpression><![CDATA[$F{unitBuyPriceHT}*$F{unitQuantity}]]></textFieldExpression>
             </textField>
         </band>

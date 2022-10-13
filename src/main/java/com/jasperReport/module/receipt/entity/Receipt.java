@@ -15,6 +15,12 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Receipt {
+
+
+
+
+
+
     /**
      * identifier of receipt
      */
@@ -27,32 +33,22 @@ public class Receipt {
      */
     @Column(unique = true)
     private String num;
-
-
-
-
-    /**
-     * delivery note number of receipt
-     */
-    private String deliveryNum;
-
-
-
-    /**
-     * delivery note date of receipt
-     */
-    private String deliveryDate;
-
-
-
-
-
+    private String frsname;
+    private String frsadress;
+    private String frsfax;
+    private String frsmobile;
+    private String cltname;
+    private String frsmail;
+    private String cltadress;
+    private String cltfax;
+    private String cltmobile;
+    private String cltmail;
 
 
     private String validatedBy;
 
+    private String conforme;
 
-    private String stream;
 
 
 

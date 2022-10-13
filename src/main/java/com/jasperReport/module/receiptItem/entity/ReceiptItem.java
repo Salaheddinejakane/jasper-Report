@@ -1,14 +1,11 @@
 package com.jasperReport.module.receiptItem.entity;
-
-
 import com.jasperReport.module.receipt.entity.Receipt;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
-import java.math.BigDecimal;
+
 
 @Entity
 @Setter
@@ -17,6 +14,9 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 
 public class ReceiptItem {
+
+
+
 
     /**
      * identifier of receipt item
@@ -32,6 +32,10 @@ public class ReceiptItem {
      */
 
     private String productEntity;
+    private String ncmd;
+
+    private String Lot;
+    private String Dateper;
 
     @ManyToOne
     private Receipt receipt;

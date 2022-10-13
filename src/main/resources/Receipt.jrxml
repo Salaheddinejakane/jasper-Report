@@ -11,7 +11,6 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<import value="org.apache.commons.codec.binary.Base64"></import>
 	<style name="StyleTitre" fill="Solid" fontName="Roboto" fontSize="10"/>
 	<style name="StyleDate" fill="Solid" hTextAlign="Left" fontName="Roboto" fontSize="10"/>
 	<style name="StyleDateday" style="StyleDate" fontName="Roboto" fontSize="20"/>
@@ -41,6 +40,16 @@
 	<style name="Style bn&amp;fc" fontName="Roboto" fontSize="10"/>
 	<parameter name="logo1" class="java.lang.String">
 	</parameter>
+	<parameter name="logo2" class="java.lang.String">
+	</parameter>
+	<parameter name="logo3" class="java.lang.String">
+	</parameter>
+	<parameter name="logo4" class="java.lang.String">
+	</parameter>
+	<parameter name="logo5" class="java.lang.String">
+	</parameter>
+	<parameter name="logo6" class="java.lang.String">
+	</parameter>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -49,20 +58,24 @@
 	<field name="totalPriceTTC" class="java.lang.Double"/>
 	<field name="items" class="java.util.Set"/>
 	<field name="remark" class="java.lang.String"/>
-
-
-<!--	<field name="productEntity" class="java.lang.String"/>-->
+<!--    <field name="productEntity" class="java.lang.String"/>-->
 <!--	<field name="orderedQuantity" class="java.lang.Integer"/>-->
-<!--	<field name="validatedBy" class="java.lang.String"/>-->
+	<field name="validatedBy" class="java.lang.String"/>
 <!--	<field name="deliveryNum" class="java.lang.String"/>-->
 <!--	<field name="deliveryDate" class="java.lang.String"/>-->
 <!--	<field name="name" class="java.lang.String"/>-->
-<!--	<field name="mobile" class="java.lang.String"/>-->
 <!--	<field name="email" class="java.lang.String"/>-->
 <!--	<field name="fax" class="java.lang.String"/>-->
-
-
-
+	<field name="frsname" class="java.lang.String"/>
+	<field name="frsadress" class="java.lang.String"/>
+	<field name="frsfax" class="java.lang.String"/>
+	<field name="frsmobile" class="java.lang.String"/>
+	<field name="frsmail" class="java.lang.String"/>
+	<field name="cltname" class="java.lang.String"/>
+	<field name="cltadress" class="java.lang.String"/>
+	<field name="cltfax" class="java.lang.String"/>
+	<field name="cltmobile" class="java.lang.String"/>
+	<field name="cltmail" class="java.lang.String"/>
 
 	<pageHeader>
 		<band height="68">
@@ -86,15 +99,15 @@
 				</textElement>
 				<text><![CDATA[Date de réception]]></text>
 			</staticText>
-			<staticText>
+			<textField>
 				<reportElement style="StyleRC" x="390" y="0" width="165" height="26" forecolor="#43484B" uuid="201d42d3-dddb-4bca-a53e-4c2c8769e8c6">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right"/>
-				<text><![CDATA[$F{num}]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$F{num}]]></textFieldExpression>
+			</textField>
 			<line>
 				<reportElement mode="Opaque" x="0" y="44" width="556" height="1" forecolor="#2BAAA9" uuid="ab8b214a-dc4a-4a6c-b882-4d134a60e24c">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -114,12 +127,7 @@
 				</textElement>
 <!--				<textFieldExpression><![CDATA[$F{deliveryDate}]]></textFieldExpression>-->
 			</textField>
-			<image>
-				<reportElement x="270" y="10" width="41" height="30" uuid="7f5d48fa-cbe4-4cf3-b1c4-d6e562d65054"/>
-<!--				<imageExpression><![CDATA[new ByteArrayInputStream(new org.apache.commons.codec.binary.Base64().decodeBase64($V{logo}.getBytes("UTF-8")))]]></imageExpression>-->
-<!--				<imageExpression><![CDATA[new ByteArrayInputStream(new Base64.getEncoder().encodeToString(IOUtils.toByteArray(logo)))]]></imageExpression>-->
-				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo1}))]]></imageExpression>
-			</image>
+
 		</band>
 	</pageHeader>
 	<detail>
@@ -154,27 +162,27 @@
 				<textElement verticalAlignment="Middle"/>
 				<text><![CDATA[CLIENT]]></text>
 			</staticText>
-			<staticText>
+			<textField>
 				<reportElement x="110" y="40" width="186" height="25" forecolor="#43484B" uuid="6f09d640-1a6f-4d9b-a507-0e2e400e684d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Roboto" size="9"/>
 				</textElement>
-				<text><![CDATA[Lot 84, zone industrielle Ouled Saleh 27182,Province Nouaceur, Casablanca]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$F{cltadress}]]></textFieldExpression>
+			</textField>
+			<textField>
 				<reportElement x="110" y="65" width="162" height="20" forecolor="#43484B" uuid="4aefeb28-049b-49a3-a068-0ae52fdee8d3"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Roboto" size="9"/>
 				</textElement>
-				<text><![CDATA[0522 592 004 - 0522 592 004 ]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$F{cltfax}]]></textFieldExpression>
+			</textField>
+			<textField>
 				<reportElement x="136" y="15" width="100" height="13" forecolor="#43484B" uuid="f159f339-0ce9-4cc2-a431-f5909189af74"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Roboto" isBold="false"/>
 				</textElement>
-				<text><![CDATA[BINARIOS CHU]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$F{cltname}]]></textFieldExpression>
+			</textField>
 			<rectangle radius="4">
 				<reportElement x="319" y="9" width="236" height="100" backcolor="#F7F7F7" uuid="77e3b4da-2876-494e-9c12-16684a6d7efa">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -191,87 +199,100 @@
 				</reportElement>
 				<text><![CDATA[Fournisseur]]></text>
 			</staticText>
-			<staticText>
+			<textField>
 				<reportElement x="340" y="40" width="156" height="25" forecolor="#43484B" uuid="2ed8f370-8669-4405-9fae-a209c8003348"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Roboto" size="9"/>
 				</textElement>
-				<text><![CDATA[Majestic 12, Wan Chai Market, 42069,Hong Kong, China]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$F{frsadress}]]></textFieldExpression>
+			</textField>
+			<textField>
 				<reportElement x="340" y="65" width="166" height="19" forecolor="#43484B" uuid="787c2330-cc71-4799-bc38-bc99ff83b233"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Roboto" size="9"/>
 				</textElement>
-				<text><![CDATA[+86 139 1099 8888 - +86 139 1099 8888]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$F{frsfax}]]></textFieldExpression>
+			</textField>
+			<textField>
 				<reportElement x="340" y="85" width="122" height="17" forecolor="#43484B" uuid="60b94a2f-c66a-42d8-891f-9d0ef27cdb97"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Roboto" size="9"/>
 				</textElement>
-				<text><![CDATA[contact@versalife.com]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$F{frsmail}]]></textFieldExpression>
+			</textField>
+			<textField>
 				<reportElement x="110" y="85" width="162" height="17" forecolor="#43484B" uuid="e51e7fc0-4a22-4c9f-b2ff-d4931a9b0ac1"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Roboto" size="9"/>
 				</textElement>
-				<text><![CDATA[contact@versalife.com]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$F{frsmail}]]></textFieldExpression>
+			</textField>
+			<textField>
 				<reportElement x="384" y="16" width="100" height="14" forecolor="#43484B" uuid="1544107b-4ad2-49ce-8302-a0473d6fcb44"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Roboto"/>
 				</textElement>
-				<text><![CDATA[VERSALIFE]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$F{frsname}]]></textFieldExpression>
+			</textField>
 			<image>
 				<reportElement x="13" y="47" width="50" height="17" uuid="f56eaee2-48a5-40c9-bda9-c1cd55eddaf0"/>
 				<graphicElement fill="Solid"/>
-				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (1).svg"]]></imageExpression>
+<!--				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (1).svg"]]></imageExpression>-->
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo1}))]]></imageExpression>
+
 			</image>
 			<image hAlign="Center" vAlign="Middle">
 				<reportElement x="94" y="47" width="7" height="10" backcolor="#6A7B89" uuid="d435daae-2415-4d03-a75d-f5c0d5b13bbc">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (2).svg"]]></imageExpression>
+<!--				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (2).svg"]]></imageExpression>-->
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo2}))]]></imageExpression>
+
 			</image>
 			<image hAlign="Center" vAlign="Middle">
 				<reportElement x="326" y="47" width="7" height="10" forecolor="#6A7B89" backcolor="#6A7B89" uuid="06c84b7b-5380-4a43-8798-211f12938833">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (2).svg"]]></imageExpression>
+<!--				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (2).svg"]]></imageExpression>-->
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo2}))]]></imageExpression>
+
 			</image>
 			<image hAlign="Center" vAlign="Middle">
 				<reportElement x="92" y="69" width="10" height="10" backcolor="#6A7B89" uuid="002a34f2-7d56-4d8d-ba20-0067f1326e64">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (3).svg"]]></imageExpression>
+<!--				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (3).svg"]]></imageExpression>-->
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo3}))]]></imageExpression>
+
 			</image>
 			<image hAlign="Center" vAlign="Middle">
 				<reportElement x="325" y="69" width="10" height="10" backcolor="#6A7B89" uuid="c3587971-0416-4f57-8cd9-798458779f57">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (3).svg"]]></imageExpression>
+<!--				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (3).svg"]]></imageExpression>-->
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo3}))]]></imageExpression>
+
 			</image>
 			<image hAlign="Center" vAlign="Middle">
 				<reportElement x="92" y="90" width="10" height="9" backcolor="#6A7B89" uuid="7e767fc4-4fd2-4a58-8de4-d0fdb11c407c">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (4).svg"]]></imageExpression>
+<!--				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (4).svg"]]></imageExpression>-->
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo4}))]]></imageExpression>
+
 			</image>
 			<image hAlign="Center" vAlign="Middle">
 				<reportElement x="325" y="89" width="10" height="9" backcolor="#6A7B89" uuid="76299724-73af-497f-b5ec-64da3add0f12">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (4).svg"]]></imageExpression>
+<!--				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (4).svg"]]></imageExpression>-->
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo4}))]]></imageExpression>
 			</image>
 			<subreport>
 				<reportElement x="-1" y="152" width="554" height="20" uuid="78291c85-a9fc-4e12-9f58-1b64dc48ea8d">
@@ -329,7 +350,7 @@
 				<reportElement key="" style="Style7" x="151" y="31" width="190" height="14" forecolor="#43484B" uuid="3a0b1753-8ddd-4a25-a32d-82a9c1bbc58c">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
-<!--				<textFieldExpression><![CDATA[$F{validatedBy}]]></textFieldExpression>-->
+				<textFieldExpression><![CDATA[$F{validatedBy}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement style="Style1" x="-1" y="31" width="152" height="14" uuid="95509499-fe91-4b8e-ae84-f5b08ad61189">
@@ -360,7 +381,7 @@
 				</reportElement>
 				<text><![CDATA[Conforme]]></text>
 			</staticText>
-			<textField pattern="###,###.00 dh">
+			<textField pattern="###,###.00 Dh">
 				<reportElement key="" style="Style8" x="449" y="4" width="104" height="13" forecolor="#43484B" uuid="be9a9177-2ad5-4a88-9fdd-8c9490570f6d">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -383,7 +404,7 @@
 				</textElement>
 				<text><![CDATA[Total HT]]></text>
 			</staticText>
-			<textField pattern="###,###.00dh">
+			<textField pattern="###,###.00 Dh">
 				<reportElement key="" style="Style8" x="449" y="17" width="104" height="13" forecolor="#43484B" uuid="b205ed28-e432-4add-9e22-2994d2dbd8b9">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
@@ -433,12 +454,12 @@
 				<reportElement style="Style6" x="292" y="20" width="52" height="10" uuid="5b3a4d3b-4b98-4d9b-a9b8-c38d438d61db"/>
 				<text><![CDATA[U1R1108108P]]></text>
 			</staticText>
-			<staticText>
+			<textField>
 				<reportElement style="Style6" x="405" y="12" width="99" height="10" uuid="b6e9d941-3de1-4018-bbcb-26dc43517fe3">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<text><![CDATA[0522 592 004 - 0522 592 004]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$F{cltfax}+" "+$F{cltfax}]]></textFieldExpression>
+			</textField>
 			<staticText>
 				<reportElement style="Style4" x="365" y="12" width="38" height="10" uuid="ed207d74-6cce-46ac-ba18-d11aeb626f01">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -449,10 +470,10 @@
 				<reportElement style="Style4" x="365" y="21" width="20" height="10" uuid="06db5359-291f-4f45-8153-86694258c431"/>
 				<text><![CDATA[Fax :]]></text>
 			</staticText>
-			<staticText>
+			<textField>
 				<reportElement style="Style6" x="386" y="21" width="79" height="10" uuid="08f29331-f07b-47f2-9adb-e210fb75fe8a"/>
-				<text><![CDATA[0522 592 004]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$F{cltfax}]]></textFieldExpression>
+			</textField>
 			<staticText>
 				<reportElement style="Style4" x="251" y="30" width="23" height="10" uuid="4f496e54-714e-46ec-8715-8b371ced8131"/>
 				<text><![CDATA[ICE : ]]></text>
@@ -465,7 +486,7 @@
 				<reportElement style="Style4" x="365" y="31" width="25" height="10" uuid="91f80e94-9e3a-40ae-8fb9-ac6e0a9ab93d"/>
 				<text><![CDATA[Email :]]></text>
 			</staticText>
-			<staticText>
+			<textField>
 				<reportElement style="Style4" x="97" y="12" width="77" height="13" forecolor="#43484B" uuid="6881afce-e95e-43db-98cb-3ea1c062262d">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -473,17 +494,16 @@
 				<textElement verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<text><![CDATA[BINARIOS CHU]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$F{cltname}]]></textFieldExpression>
+			</textField>
 			<staticText>
 				<reportElement style="Style6" x="97" y="24" width="111" height="13" uuid="c80d2bd3-49ea-4ed9-8678-d10400bcc6f8"/>
 				<text><![CDATA[Courte description de binarios chu]]></text>
 			</staticText>
-			<staticText>
+			<textField>
 				<reportElement style="Style6" x="98" y="38" width="141" height="13" uuid="99b275f9-c2d0-47bb-a074-761d71df94b7"/>
-				<text><![CDATA[Lot 84, zone industrielle Ouled Saleh 27182,
-	Province Nouaceur, Casablanca]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$F{cltadress}]]></textFieldExpression>
+			</textField>
 			<line>
 				<reportElement x="0" y="5" width="555" height="1" forecolor="#2BAAA9" uuid="db49cf90-49aa-47a1-bb0d-9c0ab019dff2"/>
 				<graphicElement>
@@ -494,7 +514,9 @@
 				<reportElement x="5" y="17" width="70" height="18" uuid="cbd564cf-5777-4cb1-8fa6-ea7b6bb4a4cb">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (1).svg"]]></imageExpression>
+<!--				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (1).svg"]]></imageExpression>-->
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo1}))]]></imageExpression>
+
 			</image>
 			<staticText>
 				<reportElement style="Style4" x="251" y="40" width="23" height="10" uuid="7d412982-679b-419a-a6ee-3f264f0313f8">
@@ -515,17 +537,19 @@
 				<reportElement style="Style4" x="365" y="40" width="35" height="10" uuid="faa8a6af-e614-41ba-a989-50c95507fc22"/>
 				<text><![CDATA[Site web :]]></text>
 			</staticText>
-			<staticText>
+			<textField>
 				<reportElement style="Style6" x="390" y="30" width="87" height="10" uuid="b325c013-db82-47e0-a033-6038b29b42ab"/>
-				<text><![CDATA[ contact@binarios-it.com]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$F{frsmail}]]></textFieldExpression>
+			</textField>
 			<image>
 				<reportElement x="512" y="27" width="23" height="20" uuid="b68c1f57-fe81-4f9a-8725-0c2db6beb7b9">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (5).svg"]]></imageExpression>
+<!--				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (5).svg"]]></imageExpression>-->
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo5}))]]></imageExpression>
+
 			</image>
 			<image>
 				<reportElement x="519" y="34" width="11" height="8" uuid="77245990-08e6-43e9-bc00-7ad2cd35ece0">
@@ -533,7 +557,9 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (6).svg"]]></imageExpression>
+<!--				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (6).svg"]]></imageExpression>-->
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo6}))]]></imageExpression>
+
 			</image>
 		</band>
 	</pageFooter>
@@ -565,12 +591,12 @@
 				<reportElement style="Style6" x="292" y="20" width="52" height="10" uuid="aebfdd10-c056-454c-b105-f3c15be70155"/>
 				<text><![CDATA[U1R1108108P]]></text>
 			</staticText>
-			<staticText>
+			<textField>
 				<reportElement style="Style6" x="405" y="12" width="99" height="10" uuid="0479ae22-bb88-49e9-bafe-83f456b6ed94">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<text><![CDATA[0522 592 004 - 0522 592 004]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$F{cltfax}]]></textFieldExpression>
+			</textField>
 			<staticText>
 				<reportElement style="Style4" x="365" y="12" width="38" height="10" uuid="f2350828-6c25-4e3f-ac8a-fe0d1ce74eb3">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -597,7 +623,7 @@
 				<reportElement style="Style4" x="365" y="31" width="25" height="10" uuid="1976a8dc-d5a7-4ac0-8bed-9fa64920174a"/>
 				<text><![CDATA[Email :]]></text>
 			</staticText>
-			<staticText>
+			<textField>
 				<reportElement style="Style4" x="98" y="10" width="77" height="13" forecolor="#43484B" uuid="ee65c26b-ca77-481f-983b-6352302a315d">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -605,24 +631,25 @@
 				<textElement verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<text><![CDATA[BINARIOS CHU]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$F{cltname}]]></textFieldExpression>
+			</textField>
 			<staticText>
 				<reportElement style="Style6" x="97" y="24" width="111" height="13" uuid="a6cf4377-18f3-48fb-9587-02042c952325"/>
 				<text><![CDATA[Courte description de binarios chu]]></text>
 			</staticText>
-			<staticText>
+			<textField>
 				<reportElement style="Style6" x="98" y="39" width="141" height="13" uuid="e27784ef-0c0d-4063-84b6-b17205f63fe4"/>
-				<text><![CDATA[Lot 84, zone industrielle Ouled Saleh 27182,
-	Province Nouaceur, Casablanca]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$F{cltadress}]]></textFieldExpression>
+			</textField>
 			<image>
 				<reportElement x="512" y="18" width="23" height="20" uuid="523926d2-1424-4a44-b0b0-166e15fc6ceb">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (5).svg"]]></imageExpression>
+<!--				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (5).svg"]]></imageExpression>-->
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo5}))]]></imageExpression>
+
 			</image>
 			<image>
 				<reportElement x="519" y="25" width="11" height="8" uuid="7f29dbac-2fa8-47d6-a659-839195af8598">
@@ -630,14 +657,18 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (6).svg"]]></imageExpression>
+<!--				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (6).svg"]]></imageExpression>-->
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo6}))]]></imageExpression>
+
 			</image>
 			<image>
 				<reportElement x="7" y="21" width="70" height="18" uuid="01a5d101-f6c4-4739-9284-d52be5c07025">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (1).svg"]]></imageExpression>
+<!--				<imageExpression><![CDATA["C:/Users/J.SaLahEddine/Desktop/Bon Commande/jasper-Report/src/main/resources/images/Vector (1).svg"]]></imageExpression>-->
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($P{logo1}))]]></imageExpression>
+
 			</image>
 			<staticText>
 				<reportElement style="Style4" x="251" y="40" width="23" height="10" uuid="6cb8cc31-cb48-4f2c-815d-39feb9735034">
@@ -658,10 +689,10 @@
 				<reportElement style="Style4" x="365" y="40" width="35" height="10" uuid="8d95df8a-79df-4955-a323-12c63d75001b"/>
 				<text><![CDATA[Site web :]]></text>
 			</staticText>
-			<staticText>
+			<textField>
 				<reportElement style="Style6" x="390" y="30" width="87" height="10" uuid="7951edea-8fc0-4e8f-b6cc-657395a65653"/>
-				<text><![CDATA[ contact@binarios-it.com]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$F{cltmail}]]></textFieldExpression>
+			</textField>
 		</band>
 	</lastPageFooter>
 </jasperReport>

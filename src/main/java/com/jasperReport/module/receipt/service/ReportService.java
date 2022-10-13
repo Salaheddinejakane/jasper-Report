@@ -19,8 +19,7 @@ import java.util.Collections;
 import java.util.HashMap;
 
 @Service
-public class ReportService {
-    private final ResourceLoader resourceLoader;
+public class ReportService {private final ResourceLoader resourceLoader;
 
     @Autowired
     private ReceiptEntityRepository repository;
@@ -60,7 +59,7 @@ public class ReportService {
 
 
     public  String getBase64String1() throws Exception {
-        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/Vector (1).jpg").getInputStream();
+        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/1.jpg").getInputStream();
 
 
         String encodedString = Base64.getEncoder().encodeToString(IOUtils.toByteArray(file ));
@@ -69,7 +68,7 @@ public class ReportService {
 
     }
     public  String getBase64String2() throws Exception {
-        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/Vector (2).jpg").getInputStream();
+        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/2.jpg").getInputStream();
 
 
         String encodedString = Base64.getEncoder().encodeToString(IOUtils.toByteArray(file ));
@@ -78,7 +77,7 @@ public class ReportService {
 
     }
     public  String getBase64String3() throws Exception {
-        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/Vector (3).jpg").getInputStream();
+        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/3.jpg").getInputStream();
 
 
         String encodedString = Base64.getEncoder().encodeToString(IOUtils.toByteArray(file ));
@@ -87,7 +86,7 @@ public class ReportService {
 
     }
     public  String getBase64String4() throws Exception {
-        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/Vector (4).jpg").getInputStream();
+        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/4.jpg").getInputStream();
 
 
         String encodedString = Base64.getEncoder().encodeToString(IOUtils.toByteArray(file ));
@@ -96,7 +95,7 @@ public class ReportService {
 
     }
     public  String getBase64String5() throws Exception {
-        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/Vector (5).jpg").getInputStream();
+        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/5.jpg").getInputStream();
 
 
         String encodedString = Base64.getEncoder().encodeToString(IOUtils.toByteArray(file ));
@@ -105,7 +104,7 @@ public class ReportService {
 
     }
     public  String getBase64String6() throws Exception {
-        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/Vector (6).jpg").getInputStream();
+        InputStream file = this.resourceLoader.getResource("classpath:" + "/images/6.jpg").getInputStream();
 
 
         String encodedString = Base64.getEncoder().encodeToString(IOUtils.toByteArray(file ));
