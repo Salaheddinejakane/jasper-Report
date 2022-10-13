@@ -82,7 +82,7 @@
 	<field name="productEntity" class="java.lang.String"/>
 	<field name="unitPriceTTC" class="java.lang.Double"/>
 	<field name="unitPriceHT" class="java.lang.Double"/>
-<!--	<field name="tva" class="java.lang.Integer"/>-->
+	<field name="tva" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -243,7 +243,7 @@
 				<box>
 					<pen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
-<!--				<textFieldExpression><![CDATA[$F{tva}+ "%"]]></textFieldExpression>-->
+				<textFieldExpression><![CDATA[$F{tva}+ "%"]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

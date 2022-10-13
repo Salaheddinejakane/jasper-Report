@@ -27,9 +27,18 @@ public class OrderEntity {
     @Column(unique = true)
    private String num;
 
-    /* name of order
-     */
-    private String name;
+    private String frsname;
+    private String frsadress;
+    private String frsfax;
+    private String frsmobile;
+    private String cltname;
+    private String frsmail;
+    private String cltadress;
+    private String cltfax;
+    private String cltmobile;
+    private String cltmail;
+
+
 
     /* remark of order
 
@@ -39,11 +48,7 @@ public class OrderEntity {
 
     private String priority;
     private String validatedBy;
-    private String mobile;
-    private String fax;
-    private String address;
     private String remark;
-    private String email;
 
     /*
     Add validepar

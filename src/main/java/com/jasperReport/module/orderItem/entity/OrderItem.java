@@ -54,7 +54,7 @@ public class OrderItem {
 
     // Add + tva
     private Double unitPTHT;
-    private Integer TVA;
+    private Integer tva;
 
 
 

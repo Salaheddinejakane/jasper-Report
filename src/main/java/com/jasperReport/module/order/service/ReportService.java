@@ -43,10 +43,10 @@ public class ReportService {
 
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
         if (reportFormat.equalsIgnoreCase("html")) {
-            JasperExportManager.exportReportToHtmlFile(jasperPrint, path + "\\Receipts.html");
+            JasperExportManager.exportReportToHtmlFile(jasperPrint, path + "\\Orders.html");
         }
         if (reportFormat.equalsIgnoreCase("pdf")) {
-            JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\Receipts.pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\Orders.pdf");
         }
 
         return "report generated in path : " + path;
